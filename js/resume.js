@@ -74,6 +74,7 @@
 		{
 			var e=e||window.event;
 			var obj = e.target.innerHTML||e.srcElement.innerHTML;
+			console.log(e.target);
 			/*点击的是导航上的字或者图标才有反应*/
 			if(e.target.tagName!='UL')
 			{
@@ -86,7 +87,7 @@
 					document.getElementById('training').className+='over';
 				else if(obj=='更多信息')
 					document.getElementById('activities').className+='over';
-				else if(e.target.tagName=='IMG')
+				else if(e.target.tagName=='IMG' || 'SPAN')
 					document.getElementById('demos').className+='over';
 				/*选中后高亮*/
 				e.target.className+=' active';
