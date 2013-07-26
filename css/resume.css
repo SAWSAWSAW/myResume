@@ -1,0 +1,262 @@
+/*general stylistics*/
+html,body
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	background: transparent url(../img/body_bg.png) repeat-y top left;
+	/*全屏覆盖*/
+	width: 100%;
+	/*css3属性*/
+	background-size: cover;
+}
+
+h1,h2
+{
+	font-family: '微软雅黑','宋体',Calibra,sans-serif;
+}
+
+h1
+{
+	padding: 10px 0px 0px 30px;
+}
+
+h2
+{
+	font:bold 20px/25px '宋体',Calibra,serif;
+}
+
+ul
+{
+	list-style-type: square;
+}
+
+li,a,p
+{
+	font:normal 17px/30px '微软雅黑','宋体','楷体',Calibra,serif;
+}
+
+a
+{
+	text-decoration: none;
+	color:#000;
+}
+	a:hover
+	{
+		text-decoration: underline;
+		font-weight: bold;
+	}
+
+	a[href^='tel:'],a[href^='mail'],a[href^='http://pan']
+	{
+		background: url(../img/im.png) no-repeat right top;
+		padding-right: 14px;
+	}
+	a[href^='mail']
+	{
+		background: url(../img/email.png) no-repeat right top;
+	}
+
+	a[href^='http://pan']
+	{
+		background: url(../img/externalLink.gif) no-repeat right top;
+		padding-right: 10px;
+	}
+
+p
+{
+	/*css3属性*/
+	word-wrap:break-word;
+}
+
+/*specific stylistics*/
+
+div#outterWrapper
+{
+	width: 100%;
+	height: 560px;
+}
+div#innerWrapper
+{
+	width: 100%;
+	height: 450px;
+	overflow-y:hidden;
+	margin-top: 100px;
+	overflow: hidden;
+}
+
+	div#innerWrapper>div
+	{
+		width: 73%;
+		height: 480px;
+		background-color: #fff;
+		position: fixed;
+		top:100px;
+		left:13.5%;
+		/*圆角矩形*/
+		border-radius: 4px;
+	}
+
+/*置顶层*/
+.over
+{
+	z-index: 4;
+}
+
+/*正文*/
+.section
+{
+	width: 100%;
+	background-color: #fff;	
+}
+
+/*分部分*/
+div.subSection
+{
+	background: transparent url(../img/l_quote.gif) no-repeat top left;
+	border-right:1px dashed #000;
+	width: 32.5%;
+	height:230px;
+	padding: 50px 7.078% 20px 5.078%;
+	margin-left: 5.078%;
+	float: left;
+}
+
+	/*消除右边框*/
+	div.subSection+div.subSection
+	{
+		border-right-width: 0;
+	}
+
+	/*列表对齐*/
+	div.subSection li
+	{
+		/*字符距离,对齐*/
+		margin-left: -1em;
+	}
+
+/*导航*/
+ul#header
+{
+	list-style: none;
+	position: fixed;
+	width: 100%;
+	height: 78px;
+	top:-15px;
+	left: 0;
+	/*设置背景半透明*/
+	background:rgba(0,0,0,0.5);
+	/*设置tooltip需要，z-index根据父元素的来*/
+	z-index: 10;
+}
+	ul#header li
+	{
+		width:102px;
+		height:32px;
+		float:left;
+		margin:8px 5px 8px 8px;
+		color:#fff;
+		font:normal 20px/32px '微软雅黑','宋体',arial,serif,sans-serif;
+		text-align:center;
+		border-left:1px solid #fff;
+		padding: 10px 0px;
+		/*鼠标指针*/
+		cursor:pointer;
+	}
+	/*两个id提高优先级*/
+	ul#header li#mainPage
+	{
+		border-left-width: 0px;
+		padding-left: 40%;
+	}
+
+	ul#header li:hover,ul#header li.active
+	{
+		color:#E0CF56;
+	}
+
+/*更多信息*/
+ul#more
+{
+	font-size: 12px;
+}
+
+	ul#more li a
+	{
+		font-style: italic;
+	}
+
+		ul#more li a:hover
+		{
+			font-style: normal;
+		}
+
+	/*设置链表图像，已经设置过style了*/
+	ul#more li#sina
+	{
+		list-style-image: url(../img/sinalogo.jpg);
+	}
+
+	ul#more li#zhihu
+	{
+		list-style-image: url(../img/zhihu.png);
+	}
+
+	ul#more li#github
+	{
+		list-style-image: url(../img/github.png);
+	}
+
+/*iframe*/
+div#demos iframe
+{
+	min-width: 340px;
+	min-height: 280px;
+	overflow: hidden;
+	border:0;
+	margin-left: -54px;
+}
+
+/*左右箭头*/
+div.leftArrow,div.rightArrow
+{
+	position: fixed;
+	width:69px;
+	height:103px;
+	z-index: 3;
+	top:300px;
+}
+
+div.leftArrow
+{
+	background: transparent url(../img/prev_next.png) no-repeat top left;
+}
+
+div.rightArrow
+{
+	background: transparent url(../img/prev_next.png) no-repeat 0 -118px;
+	right: -3px;
+}
+
+div.leftArrow:hover
+{
+	left:-2px;
+}
+
+div.rightArrow:hover
+{
+	right: -5px;
+}
+
+/*清除浮动*/
+.clearFix:after
+{
+	content:'.';
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
